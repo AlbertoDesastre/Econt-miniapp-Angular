@@ -16,13 +16,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AddressesComponent,
     CartPreviewComponent,
     InvoicesComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
