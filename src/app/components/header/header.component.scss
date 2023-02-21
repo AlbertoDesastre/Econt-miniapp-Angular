@@ -1,0 +1,40 @@
+section.buttons-container {
+  display: flex;
+  justify-content: center;
+
+  ul.buttons-ul {
+    display: flex;
+    width: 90%;
+    height: 30%;
+    gap: 10px;
+
+    li.button {
+      list-style: none;
+      display: flex;
+      padding: 10px 15px;
+      gap: 5px;
+      background-color: #2a2c2c;
+      max-width: 100%;
+
+      span.button-number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        background-color: white;
+        color: #ee7d37;
+        font-weight: 700;
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+      }
+
+      p.button-paragraph {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        color: white;
+        align-self: center;
+      }
+    }
+  }
+}

@@ -1,1 +1,9 @@
 <p>header works!</p>
+<section class="buttons-container">
+  <ul class="buttons-ul">
+    <li class="button" *ngFor="let button of buttons">
+      <span class="button-number">{{ buttons.indexOf(button) }}</span>
+      <p class="button-paragraph">{{ button }}</p>
+    </li>
+  </ul>
+</section>
