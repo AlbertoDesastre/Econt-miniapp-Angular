@@ -1,1 +1,8 @@
-<p>checkout-summary works!</p>
+<section class="section-checkout-summary">
+  <ul class="ul-inputs">
+    <li *ngFor="let input of inputs" class="li-input-and-label">
+      <input [id]="input.id" [type]="input.type" [checked]="input.checked" />
+      <label [for]="input.id">{{ input.text }}</label>
+    </li>
+  </ul>
+</section>
