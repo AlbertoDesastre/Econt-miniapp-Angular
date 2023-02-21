@@ -1,8 +1,84 @@
 <section class="section-checkout-summary">
   <ul class="ul-inputs">
     <li *ngFor="let input of inputs" class="li-input-and-label">
-      <input [id]="input.id" [type]="input.type" [checked]="input.checked" />
+      <input
+        [id]="input.id"
+        [type]="input.type"
+        [checked]="input.checked"
+        (click)="toggleChecked($event)"
+      />
       <label [for]="input.id">{{ input.text }}</label>
     </li>
   </ul>
 </section>
+
+<div class="dropdown-wrapper">
+  <article *ngIf="inputs[2].checked === true" class="dropdown-container">
+    <button class="dropdown-title" (click)="toggleDropdown()">
+      Show available cities
+    </button>
+    <ul class="dropdown" [ngClass]="{ active: showDropdown }">
+      <li class="dropdown-li">
+        <p><strong>nameEn </strong>, in regionNameEn</p>
+        <p>
+          <strong> Has express delivery?</strong>
+          expressCityDeliveries ? "Yes!" : "No"
+        </p>
+        <p><strong> Postal code:</strong> postCode</p>
+      </li>
+      <li class="dropdown-li">
+        <p><strong>nameEn </strong>, in regionNameEn</p>
+        <p>
+          <strong> Has express delivery?</strong>
+          expressCityDeliveries ? "Yes!" : "No"
+        </p>
+        <p><strong> Postal code:</strong> postCode</p>
+      </li>
+      <li class="dropdown-li">
+        <p><strong>nameEn </strong>, in regionNameEn</p>
+        <p>
+          <strong> Has express delivery?</strong>
+          expressCityDeliveries ? "Yes!" : "No"
+        </p>
+        <p><strong> Postal code:</strong> postCode</p>
+      </li>
+      <li class="dropdown-li">
+        <p><strong>nameEn </strong>, in regionNameEn</p>
+        <p>
+          <strong> Has express delivery?</strong>
+          expressCityDeliveries ? "Yes!" : "No"
+        </p>
+        <p><strong> Postal code:</strong> postCode</p>
+      </li>
+      <li class="dropdown-li">
+        <p><strong>nameEn </strong>, in regionNameEn</p>
+        <p>
+          <strong> Has express delivery?</strong>
+          expressCityDeliveries ? "Yes!" : "No"
+        </p>
+        <p><strong> Postal code:</strong> postCode</p>
+      </li>
+      <li class="dropdown-li">
+        <p><strong>nameEn </strong>, in regionNameEn</p>
+        <p>
+          <strong> Has express delivery?</strong>
+          expressCityDeliveries ? "Yes!" : "No"
+        </p>
+        <p><strong> Postal code:</strong> postCode</p>
+      </li>
+    </ul>
+  </article>
+</div>
+
+<!--  
+    Traducir a Angular
+    
+    <div className="dropdown-container" onClick={changeDropdown}>
+    <p className="dropdown-title">{title}</p>
+    {<ul className="dropdown">
+       <li key={id} className="dropdown-li">
+      {city && onCity(city)}
+      {office && onOffice(office)}
+       </li>
+    </ul>}
+  </div> -->
