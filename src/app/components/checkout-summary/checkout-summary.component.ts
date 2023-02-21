@@ -23,7 +23,7 @@ export class CheckoutSummaryComponent {
       id: 'econt-invoice',
       type: 'radio',
       text: 'Pick my purchase on an Econt office',
-      checked: false,
+      checked: true,
     },
   ];
 

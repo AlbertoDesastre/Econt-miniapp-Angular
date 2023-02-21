@@ -10,8 +10,71 @@
       <label [for]="input.id">{{ input.text }}</label>
     </li>
   </ul>
-
-  <article *ngIf="inputs[2].checked === true">
-    <h1>HOLAAAA</h1>
-  </article>
 </section>
+
+<article *ngIf="inputs[2].checked === true" class="dropdown-container">
+  <p class="dropdown-title">Available cities</p>
+  <ul class="dropdown">
+    <li class="dropdown-li">
+      <p><strong>nameEn </strong>, in regionNameEn</p>
+      <p>
+        <strong> Has express delivery?</strong>
+        expressCityDeliveries ? "Yes!" : "No"
+      </p>
+      <p><strong> Postal code:</strong> postCode</p>
+    </li>
+    <li class="dropdown-li">
+      <p><strong>nameEn </strong>, in regionNameEn</p>
+      <p>
+        <strong> Has express delivery?</strong>
+        expressCityDeliveries ? "Yes!" : "No"
+      </p>
+      <p><strong> Postal code:</strong> postCode</p>
+    </li>
+    <li class="dropdown-li">
+      <p><strong>nameEn </strong>, in regionNameEn</p>
+      <p>
+        <strong> Has express delivery?</strong>
+        expressCityDeliveries ? "Yes!" : "No"
+      </p>
+      <p><strong> Postal code:</strong> postCode</p>
+    </li>
+    <li class="dropdown-li">
+      <p><strong>nameEn </strong>, in regionNameEn</p>
+      <p>
+        <strong> Has express delivery?</strong>
+        expressCityDeliveries ? "Yes!" : "No"
+      </p>
+      <p><strong> Postal code:</strong> postCode</p>
+    </li>
+    <li class="dropdown-li">
+      <p><strong>nameEn </strong>, in regionNameEn</p>
+      <p>
+        <strong> Has express delivery?</strong>
+        expressCityDeliveries ? "Yes!" : "No"
+      </p>
+      <p><strong> Postal code:</strong> postCode</p>
+    </li>
+    <li class="dropdown-li">
+      <p><strong>nameEn </strong>, in regionNameEn</p>
+      <p>
+        <strong> Has express delivery?</strong>
+        expressCityDeliveries ? "Yes!" : "No"
+      </p>
+      <p><strong> Postal code:</strong> postCode</p>
+    </li>
+  </ul>
+</article>
+
+<!--  
+    Traducir a Angular
+    
+    <div className="dropdown-container" onClick={changeDropdown}>
+    <p className="dropdown-title">{title}</p>
+    {<ul className="dropdown">
+       <li key={id} className="dropdown-li">
+      {city && onCity(city)}
+      {office && onOffice(office)}
+       </li>
+    </ul>}
+  </div> -->
