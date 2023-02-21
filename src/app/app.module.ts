@@ -7,7 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddressesComponent } from './components/addresses/addresses.component';
 import { CartPreviewComponent } from './components/cart-preview/cart-preview.component';
 import { InvoicesComponent } from './components/invoices/invoices.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
+
+import { CheckoutSummaryComponent } from './components/checkout-summary/checkout-summary.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AddressesComponent,
     CartPreviewComponent,
     InvoicesComponent,
-    NavigationComponent,
+    CheckoutSummaryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
