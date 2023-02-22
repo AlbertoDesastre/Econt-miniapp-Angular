@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { CartPreviewComponent } from './components/cart-preview/cart-preview.com
 import { InvoicesComponent } from './components/invoices/invoices.component';
 
 import { CheckoutSummaryComponent } from './components/checkout-summary/checkout-summary.component';
+import { CityItemComponent } from './components/city-item/city-item.component';
+import { DropdownCitiesComponent } from './components/dropdown-cities/dropdown-cities.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +22,10 @@ import { CheckoutSummaryComponent } from './components/checkout-summary/checkout
     CartPreviewComponent,
     InvoicesComponent,
     CheckoutSummaryComponent,
+    CityItemComponent,
+    DropdownCitiesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

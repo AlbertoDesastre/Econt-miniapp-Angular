@@ -1,0 +1,37 @@
+<div class="dropdown-wrapper">
+  <!-- Pendiente de aplicar esta logica para cuando tenga que pasar
+      el estado a su hermano/hijo 
+  
+  <article *ngIf="inputs[2].checked === true"-->
+  <article class="dropdown-container">
+    <button class="dropdown-title" (click)="toggleDropdown()">
+      Show available cities
+    </button>
+    <ul class="dropdown" [ngClass]="{ active: showDropdown }">
+      <li class="dropdown-li" *ngFor="let city of cities">
+        <p>
+          <strong>{{ city.nameEn }}</strong
+          >, in {{ city.regionNameEn }}
+        </p>
+        <p>
+          <strong> Has express delivery?</strong>
+          {{ city.expressCityDeliveries ? "Yes!" : "No" }}
+        </p>
+        <p><strong> Postal code: </strong>{{ city.postCode }}</p>
+      </li>
+    </ul>
+  </article>
+</div>
+
+<!--  
+        Traducir a Angular
+        
+        <div className="dropdown-container" onClick={changeDropdown}>
+        <p className="dropdown-title">{title}</p>
+        {<ul className="dropdown">
+           <li key={id} className="dropdown-li">
+          {city && onCity(city)}
+          {office && onOffice(office)}
+           </li>
+        </ul>}
+      </div> -->
