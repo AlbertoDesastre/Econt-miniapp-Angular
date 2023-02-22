@@ -10,6 +10,8 @@ import { CartPreviewComponent } from './components/cart-preview/cart-preview.com
 import { InvoicesComponent } from './components/invoices/invoices.component';
 
 import { CheckoutSummaryComponent } from './components/checkout-summary/checkout-summary.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { CityItemComponent } from './components/city-item/city-item.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { CheckoutSummaryComponent } from './components/checkout-summary/checkout
     CartPreviewComponent,
     InvoicesComponent,
     CheckoutSummaryComponent,
+    DropdownComponent,
+    CityItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
