@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { arrayOfCities } from 'src/app/assets/fakeCities';
+import { City } from 'src/app/models/city.model';
 
 @Component({
   selector: 'app-checkout-summary',
@@ -26,6 +28,8 @@ export class CheckoutSummaryComponent {
       checked: true,
     },
   ];
+
+  cities: City[] = arrayOfCities;
 
   showDropdown = false;
 

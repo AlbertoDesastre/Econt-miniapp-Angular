@@ -18,53 +18,16 @@
       Show available cities
     </button>
     <ul class="dropdown" [ngClass]="{ active: showDropdown }">
-      <li class="dropdown-li">
-        <p><strong>nameEn </strong>, in regionNameEn</p>
+      <li class="dropdown-li" *ngFor="let city of cities">
+        <p>
+          <strong>{{ city.nameEn }}</strong
+          >, in {{ city.regionNameEn }}
+        </p>
         <p>
           <strong> Has express delivery?</strong>
-          expressCityDeliveries ? "Yes!" : "No"
+          {{ city.expressCityDeliveries ? "Yes!" : "No" }}
         </p>
-        <p><strong> Postal code:</strong> postCode</p>
-      </li>
-      <li class="dropdown-li">
-        <p><strong>nameEn </strong>, in regionNameEn</p>
-        <p>
-          <strong> Has express delivery?</strong>
-          expressCityDeliveries ? "Yes!" : "No"
-        </p>
-        <p><strong> Postal code:</strong> postCode</p>
-      </li>
-      <li class="dropdown-li">
-        <p><strong>nameEn </strong>, in regionNameEn</p>
-        <p>
-          <strong> Has express delivery?</strong>
-          expressCityDeliveries ? "Yes!" : "No"
-        </p>
-        <p><strong> Postal code:</strong> postCode</p>
-      </li>
-      <li class="dropdown-li">
-        <p><strong>nameEn </strong>, in regionNameEn</p>
-        <p>
-          <strong> Has express delivery?</strong>
-          expressCityDeliveries ? "Yes!" : "No"
-        </p>
-        <p><strong> Postal code:</strong> postCode</p>
-      </li>
-      <li class="dropdown-li">
-        <p><strong>nameEn </strong>, in regionNameEn</p>
-        <p>
-          <strong> Has express delivery?</strong>
-          expressCityDeliveries ? "Yes!" : "No"
-        </p>
-        <p><strong> Postal code:</strong> postCode</p>
-      </li>
-      <li class="dropdown-li">
-        <p><strong>nameEn </strong>, in regionNameEn</p>
-        <p>
-          <strong> Has express delivery?</strong>
-          expressCityDeliveries ? "Yes!" : "No"
-        </p>
-        <p><strong> Postal code:</strong> postCode</p>
+        <p><strong> Postal code: </strong>{{ city.postCode }}</p>
       </li>
     </ul>
   </article>

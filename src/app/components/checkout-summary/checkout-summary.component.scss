@@ -25,6 +25,7 @@ section.section-checkout-summary {
   border: 2px solid black;
   width: 260px;
   height: 30px;
+  margin-right: 12px;
 
   .dropdown-title {
     width: 100%;
@@ -45,7 +46,7 @@ section.section-checkout-summary {
 
   .dropdown.active {
     width: 100%;
-    margin-top: 6px;
+    margin-top: 7px;
     max-height: 260px;
     display: flex;
     flex-direction: column;
@@ -56,11 +57,11 @@ section.section-checkout-summary {
       max-height: 120px;
       background-color: white;
       border: 2px solid black;
-      p {
+      /*   p {
         margin: 1px;
-      }
+      } */
     }
-    .dropdown-li:first-child {
+    .dropdown:first-child {
       margin-top: 15px;
     }
   }
