@@ -1,13 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { City } from '../../models/city.model';
-import { arrayOfCities } from '../../assets/fakeCities';
+import { CitiesService } from 'src/app/services/cities.service';
 
 @Component({
   selector: 'app-dropdown-cities',
   templateUrl: './dropdown-cities.component.html',
   styleUrls: ['./dropdown-cities.component.scss'],
 })
-export class DropdownCitiesComponent {
+export class DropdownCitiesComponent implements OnInit {
   @Input() cities: City[] = [
     {
       id: 8,
@@ -36,7 +36,18 @@ export class DropdownCitiesComponent {
       sunday: false,
     },
   ];
+
+  data: any;
+  constructor(private citiesService: CitiesService) {}
   showDropdown = false;
+
+  ngOnInit(): void {
+    this.citiesService
+      .getCitiesFrom({ countryCode: 'BGR' })
+      .subscribe((cities) => {
+        console.log(cities);
+      });
+  }
 
   toggleDropdown = () => {
     this.showDropdown = !this.showDropdown;
