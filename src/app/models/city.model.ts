@@ -24,3 +24,8 @@ export interface City {
   saturday: boolean;
   sunday: boolean;
 }
+
+export interface TinyCity {
+  id: number;
+  nameEn: string;
+}

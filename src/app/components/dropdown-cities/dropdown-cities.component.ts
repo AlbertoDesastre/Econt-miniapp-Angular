@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { City } from '../../models/city.model';
+import { City, TinyCity } from '../../models/city.model';
 import { CitiesService } from 'src/app/services/cities.service';
 
 @Component({
@@ -37,6 +37,8 @@ export class DropdownCitiesComponent implements OnInit {
     },
   ];
 
+  tinyCities: TinyCity[] = [{ id: 0, nameEn: '' }];
+
   data: any;
   constructor(private citiesService: CitiesService) {}
   showDropdown = false;
@@ -47,8 +49,28 @@ export class DropdownCitiesComponent implements OnInit {
       .subscribe((response) => {
         const { cities } = response;
         this.cities = cities;
-        console.log('finishing the api call', cities);
+        /*     console.log('finishing the api call', cities); */
+        if (!this.getTinyCities()) {
+          /*   console.log('tuve que setear las ciudades'); */
+          this.setTinyCities();
+        }
+        /*  console.log('no seteé las ciudades'); */
+        this.setTinyCitiesOnLocalStorage();
       });
+  }
+
+  setTinyCities() {
+    this.tinyCities = this.citiesService.getCitiesNamesAndIds(this.cities);
+    /* console.log(this.tinyCities); */
+  }
+
+  setTinyCitiesOnLocalStorage() {
+    this.citiesService.setTinyCitiesOnLocalStorage(this.tinyCities);
+  }
+
+  getTinyCities() {
+    console.log(this.citiesService.getTinyCitiesFromLocalStorage());
+    return this.citiesService.getTinyCitiesFromLocalStorage();
   }
 
   toggleDropdown = () => {
