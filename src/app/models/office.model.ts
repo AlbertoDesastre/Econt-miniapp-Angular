@@ -55,8 +55,8 @@ export interface Office {
   info: string;
   currency: string;
   language: string | null;
-  normalBusinessHoursFrom: number;
-  normalBusinessHoursTo: number;
+  normalBusinessHoursFrom: number | string;
+  normalBusinessHoursTo: number | string;
   halfDayBusinessHoursFrom: number;
   halfDayBusinessHoursTo: number;
   sundayBusinessHoursFrom: number | null;

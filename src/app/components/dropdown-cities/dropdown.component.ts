@@ -39,12 +39,24 @@ export class DropdownComponent implements OnInit {
       .subscribe((response) => {
         const { offices } = response;
         this.offices = offices;
+        this.normalizeOpenHours();
         console.log(offices);
       });
   }
   toggleDropdown = () => {
     this.showDropdown = !this.showDropdown;
   };
+
+  normalizeOpenHours() {
+    this.offices.map((office) => {
+      office.normalBusinessHoursFrom = new Date(
+        office.normalBusinessHoursFrom
+      ).toLocaleTimeString();
+      office.normalBusinessHoursTo = new Date(
+        office.normalBusinessHoursTo
+      ).toLocaleTimeString();
+    });
+  }
 
   getTinyCities() {
     /*     console.log(this.citiesService.getTinyCitiesFromLocalStorage()); */
