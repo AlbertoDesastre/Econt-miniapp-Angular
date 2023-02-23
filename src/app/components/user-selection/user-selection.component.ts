@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { saveItems } from 'src/app/helpers/saveItems';
 
 @Component({
   selector: 'app-user-selection',
@@ -13,7 +14,7 @@ export class UserSelectionComponent {
       region: 'Plovdiv',
       city: 'Asenovgrad',
       cityId: 3,
-      active: true,
+      active: false,
     },
     {
       id: 2,
@@ -45,7 +46,7 @@ export class UserSelectionComponent {
       region: 'Silistra',
       city: 'Aydemir',
       cityId: 80,
-      active: false,
+      active: true,
     },
     {
       id: 6,
@@ -56,7 +57,6 @@ export class UserSelectionComponent {
       active: false,
     },
   ];
-
   activeUser = false;
 
   toggleUser() {

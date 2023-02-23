@@ -15,7 +15,7 @@ export class OfficesService {
     countryCode: 'BGR';
     cityID: number;
   }): Observable<{ offices: Office[] }> {
-    console.log(body);
+    /* console.log(body); */
     return this.http.post<{ offices: Office[] }>(this.url, body);
   }
 }
