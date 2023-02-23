@@ -51,12 +51,21 @@ export class DropdownCitiesComponent implements OnInit {
         this.cities = cities;
         /*     console.log('finishing the api call', cities); */
         this.setTinyCities();
+        this.setTinyCitiesOnLocalStorage();
       });
   }
 
   setTinyCities() {
     this.tinyCities = this.citiesService.getCitiesNamesAndIds(this.cities);
     console.log(this.tinyCities);
+  }
+
+  setTinyCitiesOnLocalStorage() {
+    this.citiesService.setTinyCitiesOnLocalStorage(this.tinyCities);
+  }
+
+  getTinyCities() {
+    this.citiesService.getTinyCitiesFromLocalStorage();
   }
 
   toggleDropdown = () => {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { City, TinyCity } from '../models/city.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { saveItems } from '../helpers/saveItems';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +21,18 @@ export class CitiesService {
       const cityNameAndId: TinyCity = { id: city.id, nameEn: city.nameEn };
       return cityNameAndId;
     });
+  }
+
+  setTinyCitiesOnLocalStorage(tinyCities: TinyCity[]) {
+    saveItems('tiny-cities', tinyCities);
+  }
+
+  getTinyCitiesFromLocalStorage() {
+    const tinyCitiesInString = localStorage.getItem('tiny-cities');
+    if (tinyCitiesInString) {
+      const tinyCitiesJson: TinyCity[] = JSON.parse(tinyCitiesInString);
+      return tinyCitiesJson;
+    }
+    return console.error("We couldn't retrieve tiny-cities from local storage");
   }
 }
