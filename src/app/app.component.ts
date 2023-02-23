@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { City } from './models/city.model';
 import { arrayOfCities } from './assets/fakeCities';
 import { saveItems } from './helpers/saveItems';
+import { User } from './models/user.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,31 +11,24 @@ import { saveItems } from './helpers/saveItems';
 export class AppComponent {
   title = 'econt-miniapp-angular';
 
-  @Input() user = {
-    id: 0,
-    name: '',
-    region: '',
-    city: '',
-    cityId: 0,
+  @Output() user: User = {
+    id: 5,
+    name: 'Carlos',
+    region: 'Silistra',
+    city: 'Aydemir',
+    cityId: 80,
     active: false,
   };
 
   ngOnInit() {
-    console.log('user on storage before: ', localStorage.getItem('user'));
-    console.log('user on class before:', this.user);
+    /*    console.log('user on storage before: ', localStorage.getItem('user'));
+    console.log('user on class before:', this.user); */
     if (localStorage.getItem('user') === null) {
-      this.setUser({
-        id: 5,
-        name: 'Carlos',
-        region: 'Silistra',
-        city: 'Aydemir',
-        cityId: 80,
-        active: false,
-      });
+      this.setUser(this.user);
     }
 
-    console.log('user on storage: ', localStorage.getItem('user'));
-    console.log('user on class:', this.user);
+    /*  console.log('user on storage: ', localStorage.getItem('user'));
+    console.log('user on class:', this.user); */
   }
 
   setUser(userJson: {
