@@ -13,6 +13,7 @@ import { InvoicesComponent } from './components/invoices/invoices.component';
 import { CheckoutSummaryComponent } from './components/checkout-summary/checkout-summary.component';
 import { CityItemComponent } from './components/city-item/city-item.component';
 import { DropdownComponent } from './components/dropdown-cities/dropdown.component';
+import { UserSelectionComponent } from './components/user-selection/user-selection.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DropdownComponent } from './components/dropdown-cities/dropdown.compone
     CheckoutSummaryComponent,
     CityItemComponent,
     DropdownComponent,
+    UserSelectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
