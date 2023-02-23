@@ -1,0 +1,25 @@
+section.users-wrapper {
+  display: flex;
+  overflow: scroll;
+  justify-content: center;
+
+  div.users-container {
+    display: flex;
+    gap: 1.5rem;
+    width: 90%;
+
+    ul.user-profile {
+      min-width: 210px;
+      list-style: none;
+      line-height: 22px;
+      padding: 10px;
+      border: 3px dashed orange;
+      border-radius: 20px;
+    }
+
+    ul.user-profile:active {
+      color: white;
+      background-color: black;
+    }
+  }
+}
