@@ -14,4 +14,11 @@ export class CitiesService {
   getCitiesFrom(body: { countryCode: string }): Observable<{ cities: City[] }> {
     return this.http.post<{ cities: City[] }>(this.url, body);
   }
+
+  getCitiesId(cities: City[]) {
+    return cities.map((city) => {
+      const cityNameAndId = { id: city.id, name: city.nameEn };
+      return cityNameAndId;
+    });
+  }
 }

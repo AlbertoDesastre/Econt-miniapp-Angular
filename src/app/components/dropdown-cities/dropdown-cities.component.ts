@@ -48,7 +48,12 @@ export class DropdownCitiesComponent implements OnInit {
         const { cities } = response;
         this.cities = cities;
         console.log('finishing the api call', cities);
+        this.getCitiesId();
       });
+  }
+
+  getCitiesId() {
+    console.log('IDS--->', this.citiesService.getCitiesId(this.cities));
   }
 
   toggleDropdown = () => {
