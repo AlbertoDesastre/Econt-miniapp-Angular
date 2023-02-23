@@ -8,7 +8,7 @@ import { CitiesService } from 'src/app/services/cities.service';
   styleUrls: ['./dropdown-cities.component.scss'],
 })
 export class DropdownCitiesComponent implements OnInit {
-  @Input() cities: City[] = [
+  cities: City[] = [
     {
       id: 8,
       country: {
@@ -44,8 +44,10 @@ export class DropdownCitiesComponent implements OnInit {
   ngOnInit(): void {
     this.citiesService
       .getCitiesFrom({ countryCode: 'BGR' })
-      .subscribe((cities) => {
-        console.log(cities);
+      .subscribe((response) => {
+        const { cities } = response;
+        this.cities = cities;
+        console.log('finishing the api call', cities);
       });
   }
 
