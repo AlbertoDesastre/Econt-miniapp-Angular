@@ -27,7 +27,7 @@ export class DropdownComponent implements OnInit, OnChanges {
     id: 0,
     name: '',
     region: '',
-    city: '',
+    regionNameEn: '',
     cityId: 0,
     active: false,
   };
@@ -54,7 +54,7 @@ export class DropdownComponent implements OnInit, OnChanges {
       });
 
     this.officeService
-      .getFrom({ countryCode: 'BGR', cityID: 3 })
+      .getFrom({ countryCode: 'BGR', cityID: this.user.cityId })
       .subscribe((response) => {
         const { offices } = response;
         this.normalizeOpenHours(offices);

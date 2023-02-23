@@ -15,8 +15,8 @@ export class AppComponent {
     id: 5,
     name: 'Carlos',
     region: 'Silistra',
-    city: 'Aydemir',
-    cityId: 80,
+    regionNameEn: 'Aydemir',
+    cityId: 3,
     active: false,
   };
 
@@ -35,7 +35,7 @@ export class AppComponent {
     id: number;
     name: string;
     region: string;
-    city: string;
+    regionNameEn: string;
     cityId: number;
     active: boolean;
   }) {
