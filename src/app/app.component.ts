@@ -8,5 +8,4 @@ import { arrayOfCities } from './assets/fakeCities';
 })
 export class AppComponent {
   title = 'econt-miniapp-angular';
-  cities: City[] = arrayOfCities;
 }
