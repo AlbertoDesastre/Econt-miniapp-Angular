@@ -33,6 +33,6 @@ export class CitiesService {
       const tinyCitiesJson: TinyCity[] = JSON.parse(tinyCitiesInString);
       return tinyCitiesJson;
     }
-    return console.error("We couldn't retrieve tiny-cities from local storage");
+    return null;
   }
 }
