@@ -1,18 +1,23 @@
 <section class="users-wrapper">
   <!--     <li key={id} className={`user-container ${active ? "active" : null}`}> -->
   <div class="users-container">
-    <ul class="user-profile" *ngFor="let user of users">
+    <ul
+      class="user-profile"
+      *ngFor="let user of users"
+      (click)="toggleUser()"
+      [ngClass]="{ active: activeUser }"
+    >
       <li class="user-name">
-        <p><strong> Username: </strong> name</p>
+        <p><strong> Username: </strong> {{ user.name }}</p>
       </li>
       <li class="user-region">
-        <p><strong>Region/District: </strong> region</p>
+        <p><strong>Region/District: </strong>{{ user.region }}</p>
       </li>
       <li class="user-city">
-        <p><strong>City: </strong> city</p>
+        <p><strong>City: </strong> {{ user.city }}</p>
       </li>
       <li class="user-city_id">
-        <p><strong>CityID: </strong> cityId</p>
+        <p><strong>CityID: </strong> {{ user.cityId }}</p>
       </li>
     </ul>
   </div>

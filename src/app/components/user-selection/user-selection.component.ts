@@ -26,4 +26,11 @@ export class UserSelectionComponent {
     { id: 5, name: 'Carlos', region: 'Silistra', city: 'Aydemir', cityId: 80 },
     { id: 6, name: 'Olena', region: 'Blagoevgrad', city: 'Bansko', cityId: 88 },
   ];
+
+  activeUser = false;
+
+  toggleUser() {
+    console.log(this.activeUser);
+    this.activeUser = !this.activeUser;
+  }
 }
