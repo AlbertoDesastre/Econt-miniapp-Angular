@@ -14,7 +14,7 @@ export class UserSelectionComponent implements OnInit {
       region: 'Plovdiv',
       city: 'Asenovgrad',
       cityId: 3,
-      active: true,
+      active: false,
     },
     {
       id: 2,
