@@ -55,7 +55,7 @@ export class DropdownCitiesComponent implements OnInit {
   }
 
   setTinyCities() {
-    this.tinyCities = this.citiesService.getCitiesId(this.cities);
+    this.tinyCities = this.citiesService.getCitiesNamesAndIds(this.cities);
     console.log(this.tinyCities);
   }
 

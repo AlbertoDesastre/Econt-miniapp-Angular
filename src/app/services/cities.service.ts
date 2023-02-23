@@ -15,7 +15,7 @@ export class CitiesService {
     return this.http.post<{ cities: City[] }>(this.url, body);
   }
 
-  getCitiesId(cities: City[]) {
+  getCitiesNamesAndIds(cities: City[]) {
     return cities.map((city) => {
       const cityNameAndId: TinyCity = { id: city.id, nameEn: city.nameEn };
       return cityNameAndId;
