@@ -35,11 +35,11 @@ export class DropdownComponent implements OnInit {
       });
 
     this.officeService
-      .getFrom({ countryCode: 'BGR', cityID: 2 })
+      .getFrom({ countryCode: 'BGR', cityID: 3 })
       .subscribe((response) => {
         const { offices } = response;
+        this.normalizeOpenHours(offices);
         this.offices = offices;
-        this.normalizeOpenHours();
         console.log(offices);
       });
   }
@@ -47,8 +47,8 @@ export class DropdownComponent implements OnInit {
     this.showDropdown = !this.showDropdown;
   };
 
-  normalizeOpenHours() {
-    this.offices.map((office) => {
+  normalizeOpenHours(offices: Office[]) {
+    offices.map((office) => {
       office.normalBusinessHoursFrom = new Date(
         office.normalBusinessHoursFrom
       ).toLocaleTimeString();
