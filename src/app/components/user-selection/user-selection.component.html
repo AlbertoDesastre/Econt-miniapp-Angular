@@ -4,8 +4,7 @@
     <ul
       class="user-profile"
       *ngFor="let user of users"
-      (click)="toggleUser()"
-      [ngClass]="{ active: activeUser }"
+      [class]="user.active ? 'active' : null"
     >
       <li class="user-name">
         <p><strong> Username: </strong> {{ user.name }}</p>
