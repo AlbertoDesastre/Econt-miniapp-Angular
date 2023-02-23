@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { City } from '../../models/city.model';
+import { City, TinyCity } from '../../models/city.model';
 import { CitiesService } from 'src/app/services/cities.service';
 
 @Component({
@@ -37,6 +37,8 @@ export class DropdownCitiesComponent implements OnInit {
     },
   ];
 
+  tinyCities: TinyCity[] = [{ id: 0, nameEn: '' }];
+
   data: any;
   constructor(private citiesService: CitiesService) {}
   showDropdown = false;
@@ -47,13 +49,14 @@ export class DropdownCitiesComponent implements OnInit {
       .subscribe((response) => {
         const { cities } = response;
         this.cities = cities;
-        console.log('finishing the api call', cities);
-        this.getCitiesId();
+        /*     console.log('finishing the api call', cities); */
+        this.setTinyCities();
       });
   }
 
-  getCitiesId() {
-    console.log('IDS--->', this.citiesService.getCitiesId(this.cities));
+  setTinyCities() {
+    this.tinyCities = this.citiesService.getCitiesId(this.cities);
+    console.log(this.tinyCities);
   }
 
   toggleDropdown = () => {

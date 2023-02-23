@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { City } from '../models/city.model';
+import { City, TinyCity } from '../models/city.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -17,7 +17,7 @@ export class CitiesService {
 
   getCitiesId(cities: City[]) {
     return cities.map((city) => {
-      const cityNameAndId = { id: city.id, name: city.nameEn };
+      const cityNameAndId: TinyCity = { id: city.id, nameEn: city.nameEn };
       return cityNameAndId;
     });
   }
