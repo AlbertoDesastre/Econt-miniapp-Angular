@@ -29,7 +29,7 @@ export class DropdownComponent implements OnInit {
         /*Si no es capaz de obtener tinyCities, solo ahí rellenará el atributo tinyCities de esta Clase. 
         Luego, las creará en el localStorage.*/
         if (!this.getTinyCities()) {
-          this.setTinyCities();
+          this.setTinyCitiesOnClass();
         }
         this.setTinyCitiesOnLocalStorage();
       });
@@ -59,11 +59,10 @@ export class DropdownComponent implements OnInit {
   }
 
   getTinyCities() {
-    /*     console.log(this.citiesService.getTinyCitiesFromLocalStorage()); */
     return this.citiesService.getTinyCitiesFromLocalStorage();
   }
 
-  setTinyCities() {
+  setTinyCitiesOnClass() {
     this.tinyCities = this.citiesService.getCitiesNamesAndIds(this.cities);
     /* console.log(this.tinyCities); */
   }
