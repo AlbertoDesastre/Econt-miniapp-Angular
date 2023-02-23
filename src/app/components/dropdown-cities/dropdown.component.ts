@@ -38,6 +38,7 @@ export class DropdownComponent implements OnInit {
       .getFrom({ countryCode: 'BGR', cityID: 2 })
       .subscribe((response) => {
         const { offices } = response;
+        this.offices = offices;
         console.log(offices);
       });
   }

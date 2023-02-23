@@ -9,16 +9,16 @@
       Show available cities
     </button>
     <ul class="dropdown" [ngClass]="{ active: showDropdown }">
-      <li class="dropdown-li" *ngFor="let city of cities">
+      <li class="dropdown-li" *ngFor="let office of offices">
         <p>
-          <strong>{{ city.nameEn }}</strong
-          >, in {{ city.regionNameEn }}
+          <strong>{{ office.nameEn }}</strong>
         </p>
+        <p><strong>Address: </strong> {{ office.address.fullAddressEn }}</p>
+        <p><strong>Postal code:</strong> {{ office.address.city.postCode }}</p>
         <p>
-          <strong> Has express delivery?</strong>
-          {{ city.expressCityDeliveries ? "Yes!" : "No" }}
+          <strong>Open from: </strong> {{ office.normalBusinessHoursFrom }}
+          <strong> to: </strong> {{ office.normalBusinessHoursTo }}
         </p>
-        <p><strong> Postal code: </strong>{{ city.postCode }}</p>
       </li>
     </ul>
   </article>
