@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { City, TinyCity } from '../models/city.model';
+import { City, TinyCity } from '../../models/city.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { saveItems } from '../helpers/saveItems';
+import { saveItems } from '../../helpers/saveItems';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { City, TinyCity } from '../../models/city.model';
-import { CitiesService } from 'src/app/services/cities.service';
+import { CitiesService } from 'src/app/services/cities/cities.service';
 
 @Component({
   selector: 'app-dropdown-cities',
