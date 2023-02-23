@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { City, TinyCity } from '../../models/city.model';
+import { City, exampleCity, TinyCity } from '../../models/city.model';
 import { CitiesService } from 'src/app/services/cities/cities.service';
+import { OfficesService } from 'src/app/services/offices/offices.service';
+import { exampleOffice, Office } from 'src/app/models/office.model';
 
 @Component({
   selector: 'app-dropdown-cities',
@@ -8,40 +10,15 @@ import { CitiesService } from 'src/app/services/cities/cities.service';
   styleUrls: ['./dropdown-cities.component.scss'],
 })
 export class DropdownCitiesComponent implements OnInit {
-  cities: City[] = [
-    {
-      id: 8,
-      country: {
-        id: null,
-        code2: 'BG',
-        code3: 'BGR',
-        name: 'България',
-        nameEn: 'Bulgaria',
-        isEU: true,
-      },
-      postCode: '5000',
-      name: 'Велико Търново',
-      nameEn: 'Veliko Tyrnovo',
-      regionName: 'Велико Търново',
-      regionNameEn: 'Veliko Tyrnovo',
-      phoneCode: '62',
-      location: null,
-      expressCityDeliveries: true,
-      monday: true,
-      tuesday: true,
-      wednesday: true,
-      thursday: true,
-      friday: true,
-      saturday: true,
-      sunday: false,
-    },
-  ];
-
+  cities: City[] = [exampleCity];
+  offices: Office[] = [exampleOffice];
   tinyCities: TinyCity[] = [{ id: 0, nameEn: '' }];
-
-  data: any;
-  constructor(private citiesService: CitiesService) {}
   showDropdown = false;
+
+  constructor(
+    private citiesService: CitiesService,
+    private officeService: OfficesService
+  ) {}
 
   ngOnInit(): void {
     this.citiesService
@@ -56,15 +33,23 @@ export class DropdownCitiesComponent implements OnInit {
         }
         this.setTinyCitiesOnLocalStorage();
       });
+
+    this.officeService
+      .getFrom({ countryCode: 'BGR', cityID: 2 })
+      .subscribe((response) => {
+        const { offices } = response;
+        console.log(offices);
+      });
   }
   toggleDropdown = () => {
     this.showDropdown = !this.showDropdown;
   };
 
   getTinyCities() {
-    console.log(this.citiesService.getTinyCitiesFromLocalStorage());
+    /*     console.log(this.citiesService.getTinyCitiesFromLocalStorage()); */
     return this.citiesService.getTinyCitiesFromLocalStorage();
   }
+
   setTinyCities() {
     this.tinyCities = this.citiesService.getCitiesNamesAndIds(this.cities);
     /* console.log(this.tinyCities); */
