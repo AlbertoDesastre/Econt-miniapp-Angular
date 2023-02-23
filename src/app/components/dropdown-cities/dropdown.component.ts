@@ -5,11 +5,11 @@ import { OfficesService } from 'src/app/services/offices/offices.service';
 import { exampleOffice, Office } from 'src/app/models/office.model';
 
 @Component({
-  selector: 'app-dropdown-cities',
-  templateUrl: './dropdown-cities.component.html',
-  styleUrls: ['./dropdown-cities.component.scss'],
+  selector: 'app-dropdown',
+  templateUrl: './dropdown.component.html',
+  styleUrls: ['./dropdown.component.scss'],
 })
-export class DropdownCitiesComponent implements OnInit {
+export class DropdownComponent implements OnInit {
   cities: City[] = [exampleCity];
   offices: Office[] = [exampleOffice];
   tinyCities: TinyCity[] = [{ id: 0, nameEn: '' }];
