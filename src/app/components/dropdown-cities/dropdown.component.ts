@@ -43,6 +43,7 @@ export class DropdownComponent implements OnInit {
         console.log(offices);
       });
   }
+
   toggleDropdown = () => {
     this.showDropdown = !this.showDropdown;
   };
