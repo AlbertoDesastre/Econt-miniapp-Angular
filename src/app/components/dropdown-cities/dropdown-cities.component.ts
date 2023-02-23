@@ -49,16 +49,22 @@ export class DropdownCitiesComponent implements OnInit {
       .subscribe((response) => {
         const { cities } = response;
         this.cities = cities;
-        /*     console.log('finishing the api call', cities); */
+        /*Si no es capaz de obtener tinyCities, solo ahí rellenará el atributo tinyCities de esta Clase. 
+        Luego, las creará en el localStorage.*/
         if (!this.getTinyCities()) {
-          /*   console.log('tuve que setear las ciudades'); */
           this.setTinyCities();
         }
-        /*  console.log('no seteé las ciudades'); */
         this.setTinyCitiesOnLocalStorage();
       });
   }
+  toggleDropdown = () => {
+    this.showDropdown = !this.showDropdown;
+  };
 
+  getTinyCities() {
+    console.log(this.citiesService.getTinyCitiesFromLocalStorage());
+    return this.citiesService.getTinyCitiesFromLocalStorage();
+  }
   setTinyCities() {
     this.tinyCities = this.citiesService.getCitiesNamesAndIds(this.cities);
     /* console.log(this.tinyCities); */
@@ -67,13 +73,4 @@ export class DropdownCitiesComponent implements OnInit {
   setTinyCitiesOnLocalStorage() {
     this.citiesService.setTinyCitiesOnLocalStorage(this.tinyCities);
   }
-
-  getTinyCities() {
-    console.log(this.citiesService.getTinyCitiesFromLocalStorage());
-    return this.citiesService.getTinyCitiesFromLocalStorage();
-  }
-
-  toggleDropdown = () => {
-    this.showDropdown = !this.showDropdown;
-  };
 }
