@@ -28,14 +28,17 @@ export class AppComponent {
       this.setUser(this.user);
     }
     */
-
-    this.setUser(this.user);
+    const isUserOnLocalStorage = localStorage.getItem('user');
+    this.setUserOnLocalStorage(this.user);
+    if (isUserOnLocalStorage) {
+      this.user = JSON.parse(isUserOnLocalStorage);
+    }
 
     /*  console.log('user on storage: ', localStorage.getItem('user'));
     console.log('user on class:', this.user); */
   }
 
-  setUser(userJson: {
+  setUserOnLocalStorage(userJson: {
     id: number;
     name: string;
     region: string;
