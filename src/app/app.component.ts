@@ -1,7 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 import { City } from './models/city.model';
 import { arrayOfCities } from './assets/fakeCities';
-import { saveItems } from './helpers/saveItems';
+import { saveItems, saveItemsForced } from './helpers/saveItems';
 import { User } from './models/user.model';
 @Component({
   selector: 'app-root',
@@ -15,31 +15,40 @@ export class AppComponent {
     id: 5,
     name: 'Carlos',
     region: 'Silistra',
-    city: 'Aydemir',
-    cityId: 80,
+    regionNameEn: 'Aydemir',
+    cityId: 2,
     active: false,
   };
 
   ngOnInit() {
     /*    console.log('user on storage before: ', localStorage.getItem('user'));
-    console.log('user on class before:', this.user); */
+    console.log('user on class before:', this.user); 
+         WILL HAVE TO UNCOMMENT
     if (localStorage.getItem('user') === null) {
       this.setUser(this.user);
+    }
+    */
+    const isUserOnLocalStorage = localStorage.getItem('user');
+    this.setUserOnLocalStorage(this.user);
+    if (isUserOnLocalStorage) {
+      this.user = JSON.parse(isUserOnLocalStorage);
     }
 
     /*  console.log('user on storage: ', localStorage.getItem('user'));
     console.log('user on class:', this.user); */
   }
 
-  setUser(userJson: {
+  setUserOnLocalStorage(userJson: {
     id: number;
     name: string;
     region: string;
-    city: string;
+    regionNameEn: string;
     cityId: number;
     active: boolean;
   }) {
-    const userOnLocalStorage = localStorage.getItem('user');
+    /*  
+   This will have to be uncommented on Prod
+   const userOnLocalStorage = localStorage.getItem('user');
 
     if (userOnLocalStorage) {
       this.user = JSON.parse(userOnLocalStorage);
@@ -47,5 +56,9 @@ export class AppComponent {
       this.user = userJson;
       saveItems('user', userJson);
     }
+ */
+
+    /*User is overwrittten in case an user already exists on LocalStorage. Only for testing purposes */
+    saveItemsForced('user', userJson);
   }
 }
