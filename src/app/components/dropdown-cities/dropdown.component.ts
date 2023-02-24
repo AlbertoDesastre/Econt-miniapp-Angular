@@ -18,6 +18,7 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements OnInit, OnChanges {
+  /* All states initialized empty or with templates */
   cities: City[] = [exampleCity];
   offices: Office[] = [exampleOffice];
   tinyCities: TinyCity[] = [{ id: 0, nameEn: '' }];
@@ -62,7 +63,7 @@ export class DropdownComponent implements OnInit, OnChanges {
         console.log(offices);
       });
 
-    /*     console.log('Log al terminar el Init', this.user); */
+    /* console.log('Log al terminar el Init', this.user); */
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -73,6 +74,7 @@ export class DropdownComponent implements OnInit, OnChanges {
     this.showDropdown = !this.showDropdown;
   };
 
+  /* PENDING! to refactor on offices services */
   normalizeOpenHours(offices: Office[]) {
     offices.map((office) => {
       office.normalBusinessHoursFrom = new Date(
